@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+
+.container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .title {
+            color:#556b2f;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+          color: #444;
+            font-size: 24px;
+            text-align: center;
+            
+            margin-bottom: 40px;
+        }
+        .subtitle span {
+            color: #ffffff;
+        }
+
+        .workout-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            padding: 15px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .card h3 {
+            font-size: 20px;
+            color: #333;
+            margin: 15px 0;
+        }
+        .card p {
+            font-size: 16px;
+            color: #666;
+        }
+        .card .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #556b2f;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+           
+                background-color: #2b4006;
+        }
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }
+        .vid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .vid-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            overflow: hidden;
+            width: 300px;
+        }
+        .vid-card iframe {
+            width: 100%;
+            height: 200px;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-content h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .card-content p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .card-content a {
+            color: #007b7f;
+            text-decoration: none;
+        }
+        .card-content a:hover {
+            text-decoration: underline;
+        }
+        .card-image {
+            position: relative;
+        }
+</style>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="title">STRENGTH BUILDING WORKOUTS</div>
+    <div class="subtitle">Increasing strength is no easy feat, but our huge database of strength-building workout plans can help you achieve your goals</div>
+    <div class="workout-cards">
+     <div class="card">
+      <img alt="Beginners" height="400" src="img/ppl.jpg" width="600"/>
+      <h3>
+        3 Day Push/Pull/Legs (PPL) Workout for Beginners
+      </h3>
+      <p>
+        This push/pull/legs routine is a simple, yet effective workout split that hits the whole body in just 3 days a week, and helps you increase strength and build muscle.
+      </p>
+      <button class="btn" onclick="window.location.href='ppl.html '">
+       View Workout
+      </button>
+     </div>
+     <div class="card">
+      <img alt="dumbbell workout" height="400" src="img/dumbbell.avif" width="600"/>
+      <h3>
+        Dumbbell Only Workout: 6 Day Dumbbell Workout Split
+      </h3>
+      <p>
+        This 6 day dumbbell only workout program only requires dumbbells and is perfect for those looking to build lean muscle mass at home or on the go!
+      </p>
+      <button class="btn" onclick="window.location.href='dumbbell.html'">
+       View Workout
+      </button>
+     </div>
+     <div class="card">
+      <img alt="intense workout" height="400" src="img/instense.jpg" width="600"/>
+      <h3>
+        Big and Strong: 8 Week Advanced Strength Building Workout
+      </h3>
+      <p>
+        Unlock unmatched strength with this 5-day strength-building workout. This plan incorporates power, speed, and explosive movements to help you move serious weight in 8 weeks.
+      </p>
+      <button class="btn" onclick="window.location.href='intense.html'">
+       View Workout
+      </button>
+     </div>
+    </div>
+   </div>
+   <div class="title">OTHER STRENGTH BUILDING WORKOUTS FOR YOU</div>
+   <div class="vid-container">
+    <div class="vid-card">
+     <div class="card-image">
+      <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/0gxltkPi_yc?si=iehhBLvDGeCOGZrU ">
+      </iframe>
+     </div>
+     <div class="card-content">
+      <h3>
+        20 Min FULL BODY DUMBBELLS 
+      </h3>
+      <a href="#">
+        Rowan Row
+      </a>
+      <p>
+      Strength Building
+      </p>
+     </div>
+    </div>
+    <div class="vid-card">
+     <div class="card-image">
+      <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/MOrRRvSGIQc?si=i9wLeoFdyINZcAVA">
+      </iframe>
+     </div>
+     <div class="card-content">
+      <h3>
+        45 Min FULL BODY WORKOUT | No Equipment | No Repeat
+      </h3>
+      <a href="#">
+        Rowan Row
+      </a>
+      <p>
+        Strength Building
+      </p>
+     </div>
+    </div>
+    <div class="vid-card">
+     <div class="card-image">
+      <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/9FBIaqr7TjQ?si=8mta52DzIpvLKrdW">
+      </iframe>
+     </div>
+     <div class="card-content">
+      <h3>
+        30 Minute Full Body Strength Workout [No Equipment + Modifications]
+      </h3>
+      <a href="#">
+        Juice & Toya
+      </a>
+      <p>
+        Strength Building
+      </p>
+     </div>
+    </div>
+    <div class="vid-card">
+     <div class="card-image">
+      <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/Q2cMMnUuKYQ?si=I_XyMNXHUnVaBeud">
+      </iframe>
+     </div>
+     <div class="card-content">
+      <h3>
+        20 Minute Full Body Strength Workout (No Equipment/No Repeat)
+      </h3>
+      <a href="#">
+        Juice & Toya
+      </a>
+      <p>
+        Strength Building
+      </p>
+     </div>
+    </div>
+    <div class="vid-card">
+     <div class="card-image">
+      <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/LhhWNixj5zE?si=MvChS4cftRonBsik">
+      </iframe>
+     </div>
+     <div class="card-content">
+      <h3>
+        Get Strong! No Weights Strength Training at Home
+      </h3>
+      <a href="#">
+        Joanna Soh
+      </a>
+      <p>
+        Strength Building
+      </p>
+     </div>
+    </div>
+    <div class="vid-card">
+     <div class="card-image">
+      <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/wIynl3at0Rs?si=uDiuy5FbJXLriym7">
+      </iframe>
+     </div>
+     <div class="card-content">
+      <h3>
+        20 MINUTE FULL BODY WORKOUT (NO EQUIPMENT)
+      </h3>
+      <a href="#">
+       
+Milestone Strength
+      </a>
+      <p>
+        Strength Building
+      </p>
+     </div>
+    </div>
+    <div class="vid-card">
+      <div class="card-image">
+       <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/tj0o8aH9vJw?si=U8bcsOU5UPQRjGSv">
+       </iframe>
+      </div>
+      <div class="card-content">
+       <h3>
+        30 minute NO REPEAT Full Body Strength Training
+       </h3>
+       <a href="#">
+        Kaleigh Cohen
+       </a>
+       <p>
+        Strength Building
+       </p>
+      </div>
+     </div>
+     <div class="vid-card">
+      <div class="card-image">
+       <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/WNyuv7ce2vk?si=xmc0Oe-gg2NYoFsv">
+       </iframe>
+      </div>
+      <div class="card-content">
+       <h3>
+        30-Minute At-Home Strength Training Workout | BODYPUMP
+       </h3>
+       <a href="#">
+        The Home Workout Studio
+       </a>
+       <p>
+        Strength Building
+       </p>
+      </div>
+     </div>
+     <div class="vid-card">
+      <div class="card-image">
+       <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/fJRPlJdWitM?si=yTv31O2Jk3679peT">
+       </iframe>
+      </div>
+      <div class="card-content">
+       <h3>
+        20 minute Full Body Dumbbell Workout | Build Muscle, Strength & Burn Fat 
+       </h3>
+       <a href="#">
+      
+MrandMrsMuscle
+
+       </a>
+       <p>
+        Strength Building
+       </p>
+      </div>
+     </div>
+     <div class="vid-card">
+      <div class="card-image">
+       <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/tUUFn2oK_E0?si=h6EleJi8RqEfsxYl">
+       </iframe>
+      </div>
+      <div class="card-content">
+       <h3>
+        30 min FULL BODY DUMBBELL Workout (Build Muscle At Home)
+       </h3>
+       <a href="#">
+        MadFit
+       </a>
+       <p>
+        Strength Building
+       </p>
+      </div>
+   </div>
+  </body>
+ </html>

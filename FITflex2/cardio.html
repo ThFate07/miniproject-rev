@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color:#ffffff;
+    }
+
+
+.container {
+    width: 80%;
+ margin: 0 auto;
+  padding: 20px;
+ }
+  .title { 
+    color:#444; 
+     font-size: 36px;
+      font-weight: bold;
+       margin-bottom: 10px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+.subtitle {
+     color: #444;
+      font-size: 24px;
+       text-align: center;
+        margin-bottom: 40px;
+     }
+.subtitle span { 
+    color: #ffffff;
+ }
+ 
+.workout-cards {
+     display: flex;
+      justify-content: space-between;
+       flex-wrap: wrap;
+     }
+ .card {
+     background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       width: 30%;
+       padding: 15px;
+        box-sizing: border-box;
+         margin-bottom: 20px;
+     }
+.card img {
+     width: 100%;
+     border-radius: 5px;
+     }
+.card h3 {
+     font-size: 20px;
+      color: #333;
+       margin: 15px 0;
+     }
+.card p {
+     font-size: 16px;
+      color: #666;
+     }
+ .card .btn {
+     display: inline-block;
+      padding: 10px 20px;
+      background-color: #556b2f;
+       color: #fff;
+        text-align: center;
+         border-radius: 5px;
+          text-decoration: none;
+           margin-top: 10px;
+           border: none;
+         cursor: pointer;
+         }
+.btn:hover {
+     background-color: #444;
+     }
+      @media (max-width: 768px) {
+        .card {
+             width: 100%;
+             }
+         }
+</style>
+</head>
+<body>
+ 
+         <div class="container">
+         <div class="title">CARDIO WORKOUTS</div>
+         <div class="subtitle">Our Cardio Workouts will help you burn some serious calories.</div>
+          <div class="workout-cards">
+            <div class="card">
+             <img alt="Beginners" height="400" src="img/ppl.jpg" width="600"/>
+              <h3>
+                 20 Minute HIIT Workout
+                 </h3>
+                  <p>
+                  This will help you burn calories, increase endurance and improve athleticism.
+                  All you need is your bodyweight!
+                 </p>
+                  <button class="btn" onclick="window.location.href='cardioA.html '">
+                    View Workout
+                 </button>
+                </div>
+                <div class="card">
+                     <img alt="intense workout" height="400" src="img/dumbbell.avif" width="600"/>
+                      <h3>
+                     Calisthenics for Lifters: 12 Week Workout 
+                     </h3>
+                      <p>
+                     This 12 weeks workout program improves performance and takes your fitness and physique to the next level!
+                     </p>
+                      <button class="btn" onclick="window.location.href='cardioB.html'">
+                        View Workout
+                     </button>
+                    </div>
+                    <div class="card">
+                         <img alt="cardio workout" height="400" src="img/instense.jpg" width="600"/>
+                          <h3>
+                             15 Min Post-Workout Fat Blasting Circuit Routine
+                             </h3>
+                              <p>
+                             Make Cardio Fun! Get your cardio in through circuit training.
+                             </p>
+                             <button class="btn" onclick="window.location.href='cardioC.html'">
+                            View Workout
+                         </button>
+                        </div>
+                     </div>
+                    </div>
+                    <div class="title">OTHER CARDIO WORKOUTS FOR YOU</div>
+    </body>
+</html>

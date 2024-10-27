@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #ffffff;
+        }
+        
+        
+        .container {
+                    width: 80%;
+                    margin: 0 auto;
+                    padding: 20px;
+                }
+                .title {
+                    color:#556b2f;
+                    font-size: 36px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+                .subtitle {
+                  color: #444;
+                    font-size: 24px;
+                    text-align: center;
+                    
+                    margin-bottom: 40px;
+                }
+                .subtitle span {
+                    color: #ffffff;
+                }
+        
+                .workout-cards {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+                .card {
+                    background-color: #fff;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    width: 30%;
+                    padding: 15px;
+                    box-sizing: border-box;
+                    margin-bottom: 20px;
+                }
+                .card img {
+                    width: 100%;
+                    border-radius: 5px;
+                }
+                .card h3 {
+                    font-size: 20px;
+                    color: #333;
+                    margin: 15px 0;
+                }
+                .card p {
+                    font-size: 16px;
+                    color: #666;
+                }
+                .card .btn {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #556b2f;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    margin-top: 10px;
+                    border: none;
+                    cursor: pointer;
+                }
+        
+                .btn:hover {
+                   
+                        background-color: #2b4006;
+                }
+                @media (max-width: 768px) {
+                    .card {
+                        width: 100%;
+                    }
+                }
+                .vid-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    padding: 20px;
+                }
+                .vid-card {
+                    background-color: white;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    margin: 10px;
+                    overflow: hidden;
+                    width: 300px;
+                }
+                .vid-card iframe {
+                    width: 100%;
+                    height: 200px;
+                }
+                .card-content {
+                    padding: 15px;
+                }
+                .card-content h3 {
+                    font-size: 18px;
+                    margin: 10px 0;
+                    color: #333;
+                }
+                .card-content p {
+                    margin: 5px 0;
+                    color: #666;
+                }
+                .card-content a {
+                    color: #007b7f;
+                    text-decoration: none;
+                }
+                .card-content a:hover {
+                    text-decoration: underline;
+                }
+                .card-image {
+                    position: relative;
+                }
+        </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">ZUMBA WORKOUT</div>
+    <div class="subtitle">A Zumba workout is a high-energy, full-body dance-fitness class that combines Latin-inspired dance moves with cardio exercises. The name comes from a Colombian Spanish slang term that means "to move fast and have fun". </div>
+    <div class="workout-cards">
+     <div class="card">
+      <img alt="Beginners" height="400" src="img/z.jpg" width="600"/>
+      <h3>
+        Zumba Workout for Beginners
+      </h3>
+      <p>
+        Here’s a simple Zumba workout for beginners that you can try. It's designed to get you moving and having fun, while also building your confidence.
+      </p>
+      <button class="btn" onclick="window.location.href='zumba1.html '">
+       View Workout
+      </button>
+     </div>
+     <div class="card">
+      <img alt="dumbbell workout" height="400" src="img/z2.jpg" width="600"/>
+      <h3>
+        5 Day Plan
+      </h3>
+      <p>
+    
+    Here’s a simple 5-day Zumba plan for beginners that incorporates variety and helps build your skills. Each session is around 60 minutes.
+      </p>
+      <button class="btn" onclick="window.location.href='zumba2.html'">
+       View Workout
+      </button>
+     </div>
+     <div class="card">
+      <img alt="intense workout" height="400" src="img/gold.avif" width="600"/>
+      <h3>
+        Gold Plan
+      </h3>
+      <p>
+        Creating a "gold plan" for aging gracefully involves focusing on physical health, mental well-being, social engagement, and overall lifestyle. Here’s a comprehensive plan to consider:
+      </p>
+      <button class="btn" onclick="window.location.href='zumba3.html'">
+       View Workout
+      </button>
+     </div>
+    </div>
+   </div>
+   <div class="title">OTHER ZUMBA WORKOUTS FOR YOU</div>
+  </body>
+ </html>

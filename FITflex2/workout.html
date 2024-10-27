@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .catcontainer {
+            text-align: center;
+            padding: 20px;
+        }
+        .title {
+            color:#444;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+          color: #444;
+            font-size: 24px;
+            
+            margin-bottom: 40px;
+        }
+        .subtitle span {
+            color: #ffffff;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background-color:#556b2f;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            color: #fff;
+          }
+        .card:hover {
+            background-color: #2b4006;}
+
+            .train{
+              text-decoration: none;
+            }
+            .train:hover {
+              text-decoration: none;
+        }
+        .card i {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 14px;
+            color: #cccccc;
+        }
+        @media (max-width: 600px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .trainer {
+        padding: 20px;
+        text-align: center;
+      }
+      
+      .deals {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .deal {
+        width: 30%;
+            padding: 15px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      
+      }
+      .deal img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .deal h3 {
+        font-size: 24px;
+        color: #333;
+        margin: 10px 0;
+      }
+      .deal p {
+        font-size: 18px;
+        color: #555;
+        margin: 5px 0;
+      }
+      @media (max-width: 768px) {
+        .deal {
+          width: 100%;
+          margin: 10px 0;
+        }
+      }
+</style>
+    </head>
+    <body>
+<section class="trainer">
+        <div class="trainer">
+  <div class="title">TOP TRAINERS</div>
+  <div class="deals">
+    <a href="anna.html" class="train">
+    <div class="deal">
+      <img alt="ANNA EAGLECHALL" height="300" src="img/anna.jpeg" width="200"/>
+      <h3>ANNA EAGLECHALL</h3></a>
+      
+    </div> <a href="oliver.html" class="train">
+    <div class="deal">
+      <img alt="oliver" height="300" src="img/oliver.avif" width="200"/>
+      <h3>OLIVER SJOSTORM</h3></a>
+    
+    </div>
+    <a href="emi.html" class="train">
+    <div class="deal">
+      <img alt="emi" height="300" src="img/emi.jpeg" width="200"/>
+      <h3>EMI WONG</h3></a>
+    </div>
+    </section>
+<section class="category">
+      <div class="catcontainer">
+        <div class="title">TOP CATEGORIES</div>
+        <div class="subtitle">BUILD YOUR BEST BODY</div>
+        <div class="cards">
+          <a href="flex-muscle.html" class="card">
+            <i class="fas fa-dumbbell"></i>
+            <h3>Flex Muscle</h3>
+            <p>Creating tension that's temporarily making the muscle fibers smaller or contracted.</p>
+        </a>
+        <a href="cardio.html" class="card">
+            <i class="fas fa-heartbeat"></i>
+            <h3>Cardio Exercise</h3>
+            <p>Exercise your heart rate up and keeps it up for a prolonged period of time.</p>
+        </a>
+        <a href="yoga.html" class="card">
+            <i class="fas fa-spa"></i>
+            <h3>Basic Yoga</h3>
+            <p>Diaphragmatic this is the most common breathing technique you'll find in yoga.</p>
+        </a>
+        <a href="zumba.html" class="card">
+            <i class="fas fa-shoe-prints"></i>
+            <h3>Zumba</h3>
+            <p>A high-energy fitness program that blends Latin-inspired dance routines with aerobic exercise.</p>
+        </a>
+        </div>
+        </div>
+    </section>
+    <section class="blog">
+        <div class="catcontainer">
+          <div class="title">OUR BLOGS</div>
+          <div class="subtitle">Transform your mindset, and watch your body follow suit.</div>
+          <div class="deals">
+            <a href="w-blog1.html" class="train">
+            <div class="deal">
+              <img alt="ANNA EAGLECHALL" height="200" src="img/anna.webp" width="200"/>
+              <h3>The Power of Routine: Healthy Habits for a Better Life</h3></a>
+              
+            </div>\ <a href="w-blog2.html" class="train">
+            <div class="deal">
+              <img alt="oliver" height="200" src="img/oliver.avif" width="200"/>
+              <h3>OLIVER SJOSTORM</h3></a>
+            
+            </div>
+            <a href="w-blog3.html" class="train">
+            <div class="deal">
+              <img alt="emi" height="200" src="img/emiwong.jpeg" width="200"/>
+              <h3>EMI WONG</h3></a>
+            </div>
+    </body>
+    </html>        

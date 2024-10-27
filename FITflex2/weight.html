@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Tracker with Graph</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .title {
+            color:#444;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+          color: #444;
+            font-size: 24px;
+            
+            margin-bottom: 40px;
+        }
+        .subtitle span {
+            color: #ffffff;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            width: 100%;
+            height: 30px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #3e8e41;
+        }
+        
+        #graph {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        .calculator {
+            width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .calculator input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .calculator button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calculator button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weight Tracker with Graph</h1>
+    <form id="weight-form">
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+        <label for="weight">Weight:</label>
+        <input type="number" id="weight" required>
+        <button id="add-weight-btn">Add Weight</button>
+    </form>
+    <div id="graph"></div>
+    <div class="calculator">
+        <h2>BMI Calculator</h2>
+        <form>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight"><br><br>
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height"><br><br>
+            <button type="submit">Calculate BMI</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+    
+
+    <script>
+        let weights = [];
+
+        document.getElementById('add-weight-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            let date = document.getElementById('date').value;
+            let weight = document.getElementById('weight').value;
+            weights.push({ date, weight });
+            console.log(weights);
+            drawGraph();
+        });
+
+        function drawGraph() {
+            let graph = document.getElementById('graph');
+            graph.innerHTML = '';
+            let canvas = document.createElement('canvas');
+            canvas.width = graph.offsetWidth;
+            canvas.height = graph.offsetHeight;
+            graph.appendChild(canvas);
+            let ctx = canvas.getContext('2d');
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            // Draw x-axis (date)
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height - 20);
+            ctx.lineTo(canvas.width, canvas.height - 20);
+            ctx.stroke();
+            for (let i = 0; i < weights.length; i++) {
+                let x = i * (canvas.width / weights.length);
+                ctx.fillText(weights[i].date, x, canvas.height - 10);
+            }
+
+            // Draw y-axis (weight)
+            ctx.beginPath();
+            ctx.moveTo(20, canvas.height);
+            ctx.lineTo(20, 0);
+            ctx.stroke();
+            for (let i = 0; i <= 100; i += 10) {
+                let y = canvas.height - (i / 100) * canvas.height;
+                ctx.fillText(i, 10, y);
+            }
+
+            // Draw graph line
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height);
+            for (let i = 0; i < weights.length; i++) {
+                let x = i * (canvas.width / weights.length);
+                let y = canvas.height - (weights[i].weight / 100) * canvas.height;
+                ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+        }
+     
+    </script>
+       <script>
+        // Get the form elements
+        const form = document.querySelector('form');
+        const weightInput = document.querySelector('#weight');
+        const heightInput = document.querySelector('#height');
+        const resultDiv = document.querySelector('#result');
+
+        // Add an event listener to the form
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get the values from the inputs
+            const weight = parseFloat(weightInput.value);
+            const height = parseFloat(heightInput.value) / 100; // Convert cm to m
+
+            // Calculate the BMI
+            const bmi = weight / (height ** 2);
+
+            // Display the result
+            resultDiv.textContent = `Your BMI is: ${bmi.toFixed(2)}`;
+
+            // Determine the BMI category
+            if (bmi < 18.5) {
+                resultDiv.textContent += ` (Underweight)`;
+            } else if (bmi < 25) {
+                resultDiv.textContent += ` (Normal weight)`;
+            } else if (bmi < 30) {
+                resultDiv.textContent += ` (Overweight)`;
+            } else {
+                resultDiv.textContent += ` (Obese)`;
+            }
+        });
+    </script>
+</body>
+</html>

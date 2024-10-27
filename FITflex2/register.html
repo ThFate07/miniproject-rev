@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .register-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .brand-name {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #556b2f;
+        }
+
+        .register-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .register-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #556b2f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .register-container button:hover {
+            background-color: #556b2f;
+        }
+
+        .back-to-login {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .back-to-login a {
+            color: #556b2f;
+            text-decoration: none;
+        }
+
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="register-container">
+        <div class="brand-name">FIT&FLEX
+
+        </div>
+        <form id="signupForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <div class="back-to-login">
+            <a href="login.html">Back to Login</a> <!-- Link back to login page -->
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const isToken = localStorage.getItem("token");
+
+            if (isToken) {
+                fetch('http://localhost:3000/api/auth/verify', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ token: isToken }),  // Pass token as an object
+                })
+                    .then(response => response.json())  // Parse the JSON response
+                    .then(data => {
+                        if (data.message === 'Token verified successfully') {
+                            // If token is verified, redirect to dashboard
+                            window.location = '/FITflex2/dash.html';
+                        } else {
+                            console.log('Token verification failed:', data.message);
+                            // Optionally handle invalid token case, e.g., log out the user
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Error verifying token:', err);
+                    });
+            }
+        });
+
+
+        document.getElementById('signupForm').addEventListener('submit', async function (event) {
+            event.preventDefault();  // Prevent default form submission
+
+            // Get form data
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const Confirmpassword = document.getElementById('confirm-password').value;
+
+            if (password != Confirmpassword) {
+                alert("Passwords do not match");
+                return;
+            }
+
+            if (!username || !email || !password) {
+                alert("Invalid or empty fields.");
+                return;
+            }
+            // Prepare data for POST request
+            const data = {
+                username: username,
+                email: email,
+                password: password
+            };
+
+
+            try {
+                const response = await fetch('http://localhost:3000/api/auth/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const parsedResponse = await response.json();
+
+
+                if (response.ok) {
+                    // Handle success
+
+                    alert('Success:', parsedResponse.message);
+                    localStorage.setItem('token', parsedResponse.token);
+                    window.location = "/FITflex2/dash.html"
+                } else {
+                    // Handle error
+                    alert('Error: ' + parsedResponse.message);
+                }
+            } catch (error) {
+                console.error('Network Error:', error);
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

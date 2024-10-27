@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .tracker-section {
+            margin-bottom: 20px;
+        }
+
+        .tracker-section h2 {
+            margin-top: 0;
+        }
+
+        #food-log {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #add-btn {
+            width: 100%;
+            height: 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #add-btn:hover {
+            background-color: #3e8e41;
+        }
+
+        #nutrition-info {
+            margin-top: 20px;
+        }
+
+        #nutrition-info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #nutrition-info th, #nutrition-info td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nutrition Tracker</h1>
+    </header>
+    <main>
+        <section class="tracker-section">
+            <h2>Log Your Food</h2>
+            <input type="text" id="food-log" placeholder="Enter food item">
+            <button id="add-btn">Add</button>
+            <ul id="food-list"></ul>
+        </section>
+        <section class="tracker-section" id="nutrition-info">
+            <h2>Nutrition Information</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Food Item</th>
+                        <th>Calories</th>
+                        <th>Protein (g)</th>
+                        <th>Fat (g)</th>
+                        <th>Carbohydrates (g)</th>
+                    </tr>
+                </thead>
+                <tbody id="nutrition-table"></tbody>
+            </table>
+            <p id="total-nutrition"></p>
+        </section>
+    </main>
+    <script>
+        const foodLog = document.getElementById('food-log');
+        const addBtn = document.getElementById('add-btn');
+        const foodList = document.getElementById('food-list');
+        const nutritionTable = document.getElementById('nutrition-table');
+        const totalNutrition = document.getElementById('total-nutrition');
+
+        let foodItems = [];
+        let totalCalories = 0;
+        let totalProtein = 0;
+        let totalFat = 0;
+        let totalCarbohydrates = 0;
+
+        addBtn.addEventListener('click', () => {
+            const foodItem = foodLog.value.trim();
+            if (foodItem) {
+                const li = document.createElement('li');
+                li.textContent = foodItem;
+                foodList.appendChild(li);
+                foodLog.value = '';
+
+                // Calculate nutrition information
+                const nutritionInfo = calculateNutrition(foodItem);
+                displayNutritionInfo(nutritionInfo);
+
+                // Update total nutrition information
+                totalCalories += nutritionInfo.calories;
+                totalProtein += nutritionInfo.protein;
+                totalFat += nutritionInfo.fat;
+                totalCarbohydrates += nutritionInfo.carbohydrates;
+
+                displayTotalNutrition();
+            }
+        });
+
+        function calculateNutrition(foodItem) {
+            // TO DO: implement nutrition calculation logic using a nutrition API or database
+            // For now, return a sample nutrition info object
+            return {
+                foodItem: foodItem,
+                calories: 200,
+                protein: 30,
+                fat: 10,
+                carbohydrates: 40
+            };
+        }
+
+        function displayNutritionInfo(nutritionInfo) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${nutritionInfo.foodItem}</td>
+                <td>${nutritionInfo.calories}</td>
+                <td>${nutritionInfo.protein}g</td>
+                <td>${nutritionInfo.fat}g</td>
+                <td>${nutrition Info.carbohydrates}g</td>
+            `;
+            nutritionTable.appendChild(tr);
+        }
+
+        function displayTotalNutrition() {
+            totalNutrition.textContent = `Total Nutrition: ${totalCalories} calories, ${totalProtein}g protein, ${totalFat}g fat, ${totalCarbohydrates}g carbohydrates`;
+        }
+    </script>
+</body>
+</html>

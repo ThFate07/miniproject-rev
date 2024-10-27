@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+    
+    
+    .container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .title {
+                color:#556b2f;
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            .subtitle {
+              color: #444;
+                font-size: 24px;
+                text-align: center;
+                
+                margin-bottom: 40px;
+            }
+            .subtitle span {
+                color: #ffffff;
+            }
+    
+            .workout-cards {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .card {
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 30%;
+                padding: 15px;
+                box-sizing: border-box;
+                margin-bottom: 20px;
+            }
+            .card img {
+                width: 100%;
+                border-radius: 5px;
+            }
+            .card h3 {
+                font-size: 20px;
+                color: #333;
+                margin: 15px 0;
+            }
+            .card p {
+                font-size: 16px;
+                color: #666;
+            }
+            .card .btn {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #556b2f;
+                color: #fff;
+                text-align: center;
+                border-radius: 5px;
+                text-decoration: none;
+                margin-top: 10px;
+                border: none;
+                cursor: pointer;
+            }
+    
+            .btn:hover {
+               
+                    background-color: #2b4006;
+            }
+            @media (max-width: 768px) {
+                .card {
+                    width: 100%;
+                }
+            }
+            .vid-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 20px;
+            }
+            .vid-card {
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                margin: 10px;
+                overflow: hidden;
+                width: 300px;
+            }
+            .vid-card iframe {
+                width: 100%;
+                height: 200px;
+            }
+            .card-content {
+                padding: 15px;
+            }
+            .card-content h3 {
+                font-size: 18px;
+                margin: 10px 0;
+                color: #333;
+            }
+            .card-content p {
+                margin: 5px 0;
+                color: #666;
+            }
+            .card-content a {
+                color: #007b7f;
+                text-decoration: none;
+            }
+            .card-content a:hover {
+                text-decoration: underline;
+            }
+            .card-image {
+                position: relative;
+            }
+    </style>
+</head>
+<body>
+
+         <div class="container">
+         <div class="title">YOGA WORKOUTS</div>
+         <div class="subtitle"> Yoga is an ancient Indian practice that aims to create union between body, mind and spirit.</div>
+          <div class="workout-cards">
+            <div class="card">
+             <img alt="Beginners" height="400" src="img/yoga1.avif" width="600"/>
+              <h3>
+                 20 Minute Beginners Workout
+                 </h3>
+                  <p>
+                 Overwhelmed from where to start? This yoga routine includes some of the most basic yoga poses to stretch, calm and tone your entire body. 
+                 </p>
+                  <button class="btn" onclick="window.location.href='yoga1.html '">
+                    View Workout
+                 </button>
+                </div>
+                <div class="card">
+                     <img alt="Intermediate Yoga" height="400" src="img/yoga2.avif" width="600"/>
+                      <h3>
+                      30 min Intermediate Full Body Vinayasa Flow
+                     </h3>
+                      <p>
+                     This yoga flow will help you increase flexibility, work on balance, develop your strength and test your stamina. 
+                     You can expect poses like tiger, half moon, chair, dancer’s pose, bridge and many more.
+                     </p>
+                      <button class="btn" onclick="window.location.href='yoga2.html'">
+                        View Workout
+                     </button>
+                    </div>
+                    <div class="card">
+                         <img alt="pranayama" height="400" src="img/yoga3.avif" width="600"/>
+                          <h3>
+                             Yoga for Stress Management  
+                             </h3>
+                              <p>
+                             Breathing exercises ie 'Pranayama' enhances your sleep quality and encourage mindfulness. 15 asanas to help you relax.
+                             </p>
+                             <button class="btn" onclick="window.location.href='yoga3.html'">
+                            View Workout
+                         </button>
+                        </div>
+                     </div>
+                    </div>
+                    <div class="title">OTHER YOGASANAS FOR YOU</div>
+    </body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .hero {
+      position: relative;
+      /* Add this */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2em;
+      background-color: #f7f7f7;
+    }
+
+    .home-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .home-text {
+      position: absolute;
+      /* Add this */
+      top: 75%;
+      /* Add this */
+      left: 50%;
+      /* Add this */
+      transform: translate(-50%, -50%);
+      /* Add this */
+      text-align: center;
+      color: #fff;
+      /* Add this to make the text visible on top of the image */
+    }
+
+    .home-text h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .home-text p {
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: rgb(68, 68, 68, 0.5);
+      ;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    .catcontainer {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .title {
+      color: #444;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #444;
+      font-size: 24px;
+
+      margin-bottom: 40px;
+    }
+
+    .subtitle span {
+      color: #ffffff;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #556b2f;
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: left;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .card:hover {
+      background-color: #2b4006;
+    }
+
+    .train {
+      text-decoration: none;
+    }
+
+    .train:hover {
+      text-decoration: none;
+    }
+
+    .card i {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    @media (max-width: 600px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+
+    h1 {
+      text-align: center;
+      color: #343a40;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+      background-color: #fff;
+      border: 2px solid #dee2e6;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      border: 1px solid #dee2e6;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: #343a40;
+    }
+
+    .highlight {
+      background-color: #f8f9fa;
+    }
+
+    .special {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <div class="logo">FIT&FLEX</div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#timetable">Timetable</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="home">
+    <img src="img/home.jpg" alt="home Image" class="home-img">
+    <div class="home-text">
+      <h1>Welcome to Fit&Flex</h1>
+      <p>where your fitness journey meets flexibility and results.</p>
+      <a href="register.html" id="registerBtn"> <button>Register Now</button></a>
+      <a href="login.html" id="loginBtn"> <button>Login Now</button></a>
+    </div>
+  </section>
+  <section class="category" id="category">
+    <div class="catcontainer">
+      <div class="title">OUR FEATURES</div>
+      <div class="subtitle">BUILD YOUR BEST BODY</div>
+      <div class="cards">
+        <a href="workout.html" class="card">
+          <i class="fas fa-dumbbell"></i>
+          <h3>Workout Plans</h3>
+          <p>Push your limits today, so tomorrow you’re stronger.</p>
+        </a>
+        <a href="tracker.html" class="card">
+          <i class="fas fa-heartbeat"></i>
+          <h3>Progress Tracker</h3>
+          <p>Progress is the result of consistency, not perfection</p>
+        </a>
+        <a href="diet.html" class="card">
+          <i class="fas fa-spa"></i>
+          <h3>Diet Plan</h3>
+          <p>A healthy diet fuels your body, mind, and future.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+  <section>
+    <h1>Fitness Time Table</h1>
+    <table id="fitness-timetable">
+      <thead>
+        <tr>
+          <th>Day/Time</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+          <th>Sunday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="highlight"><b>6:00 AM - 7:00 AM</b></td>
+          <td contenteditable="true">Yoga</td>
+          <td contenteditable="true">Cardio</td>
+          <td contenteditable="true">Strength Training</td>
+          <td contenteditable="true">Rest</td>
+          <td contenteditable="true">Yoga</td>
+          <td contenteditable="true">Cardio</td>
+          <td contenteditable="true">Rest</td>
+        </tr>
+        <tr>
+          <td class="highlight"><b>7:00 AM - 8:00 AM</b></td>
+          <td contenteditable="true">Breakfast</td>
+          <td contenteditable="true">Breakfast</td>
+          <td contenteditable="true">Breakfast</td>
+          <td contenteditable="true">Breakfast</td>
+          <td contenteditable="true">Breakfast</td>
+          <td contenteditable="true">Breakfast</td>
+          <td contenteditable="true">Breakfast</td>
+        </tr>
+        <tr>
+          <td class="highlight"><b>12:00 PM - 1:00 PM</b></td>
+          <td contenteditable="true">Lunch</td>
+          <td contenteditable="true">Lunch</td>
+          <td contenteditable="true">Lunch</td>
+          <td contenteditable="true">Lunch</td>
+          <td contenteditable="true">Lunch</td>
+          <td contenteditable="true">Lunch</td>
+          <td contenteditable="true">Lunch</td>
+        </tr>
+        <tr>
+          <td class="highlight"><b>6:00 PM - 7:00 PM</b></td>
+          <td contenteditable="true">Dinner</td>
+          <td contenteditable="true">Dinner</td>
+          <td contenteditable="true">Dinner</td>
+          <td contenteditable="true">Dinner</td>
+          <td contenteditable="true">Dinner</td>
+          <td contenteditable="true">Dinner</td>
+          <td contenteditable="true">Dinner</td>
+        </tr>
+        <tr>
+          <td class="highlight"><b>7:00 PM - 8:00 PM</b></td>
+          <td contenteditable="true">Relaxation</td>
+          <td contenteditable="true">Relaxation</td>
+          <td contenteditable="true">Relaxation</td>
+          <td contenteditable="true">Relaxation</td>
+          <td contenteditable="true">Relaxation</td>
+          <td contenteditable="true">Relaxation</td>
+          <td contenteditable="true">Relaxation</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const isToken = localStorage.getItem("token");
+
+      if (isToken) {
+        fetch('http://localhost:3000/api/auth/verify', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token: isToken }),  // Pass token as an object
+        })
+          .then(response => response.json())  // Parse the JSON response
+          .then(data => {
+            if (data.message === 'Token verified successfully') {
+              // delete register button
+              const registerBtn = document.getElementById('registerBtn');
+              const loginBtn = document.getElementById('loginBtn');
+              const parent = document.querySelector(".home-text");
+
+              registerBtn.remove();
+              loginBtn.remove();
+
+              const logOutBtn = document.createElement("button");
+              logOutBtn.innerText = "Log out";
+              logOutBtn.onclick = (event) => { 
+                window.localStorage.removeItem("token");
+                window.location = "/FITflex2/home.html"
+              }
+
+              parent.appendChild(logOutBtn)
+            } else {
+              // do nothing
+            }
+          })
+          .catch(err => {
+            console.error('Error verifying token:', err);
+          });
+      }
+    });
+
+  </script>
+</body>
+
+</html>

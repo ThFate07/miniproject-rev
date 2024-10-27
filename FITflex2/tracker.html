@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .catcontainer {
+            text-align: center;
+            padding: 20px;
+        }
+        .title {
+            color:#444;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+          color: #444;
+            font-size: 24px;
+            
+            margin-bottom: 40px;
+        }
+        .subtitle span {
+            color: #ffffff;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background-color:#556b2f;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            color: #fff;
+          }
+        .card:hover {
+            background-color: #2b4006;}
+
+            .train{
+              text-decoration: none;
+            }
+            .train:hover {
+              text-decoration: none;
+        }
+        .card i {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 14px;
+            color: #cccccc;
+        }
+        @media (max-width: 600px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+</style>
+</head>
+<body>
+    <section class="category">
+        <div class="catcontainer">
+          <div class="title">TRACK YOUR JOURNEY</div>
+          <div class="subtitle">BUILD YOUR BEST BODY</div>
+          <div class="cards">
+            <a href="weight.html" class="card">
+              <i class="fas fa-user"></i>
+              <h3>Weight Tracker</h3>
+              <p>Track your progress, celebrate your achievements, and reach your goals!</p>
+          </a>
+          <a href="bmi.html" class="card">
+              <i class="fas fa-spa"></i>
+              <h3>BMI Calculator</h3>
+              <p>Understand your body better: Calculate your BMI to guide your health journey!</p>
+          </a>
+          <a href="nutri.html" class="card">
+              <i class="fas fa-cutlery"></i>
+              <h3>Nutrition Calculator</h3>
+              <p>Nourish your body, fuel your life: Make nutrition a priority!</p>
+          </a>
+          
+          </div>
+          </div>
+      </section>
+
+      </body>
+      </html>
